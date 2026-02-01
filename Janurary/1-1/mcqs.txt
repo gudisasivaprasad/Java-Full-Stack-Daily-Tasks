@@ -1,0 +1,797 @@
+Q1) What is the main responsibility of the ClassLoader in JVM?
+a) Executing bytecode
+b) Loading class files into memory
+c) Managing garbage collection
+d) Compiling Java code to bytecode
+
+Ans - b) Loading class files into memory
+
+Q2) The Java Heap Memory is used for storing:
+a) Primitive local variables
+b) Objects and instance variables
+c) Method calls
+d) Class definitions
+
+Ans - b) Objects and instance variables
+
+Q3) Which part of the JVM executes Java bytecode?
+a) Just-In-Time (JIT) Compiler
+b) Java Virtual Machine (JVM) Interpreter
+c) Java Development Kit (JDK)
+d) Java Runtime Environment (JRE)
+
+Ans - b) Java Virtual Machine (JVM) Interpreter
+
+Q4) What is the purpose of the Just-In-Time (JIT) compiler in JVM?
+a) Convert Java source code into bytecode
+b) Interpret bytecode one instruction at a time
+c) Convert bytecode into native machine code at runtime
+d) Load Java classes into memory
+
+Ans - c) Convert bytecode into native machine code at runtime
+
+Q5) Which of the following is the highest-level class loader in the JVM hierarchy?
+a) System ClassLoader
+b) Bootstrap ClassLoader
+c) Extension ClassLoader
+d) Custom ClassLoader
+
+Ans - a) System ClassLoader
+
+
+Q6) Which of the following class loaders loads classes from CLASSPATH?
+a) Bootstrap ClassLoader
+b) Extension ClassLoader
+c) System (Application) ClassLoader
+d) Native Method ClassLoader
+
+Ans - c) System (Application) ClassLoader
+
+
+Q7) What is the output of the following code?
+public class Test 
+{
+    public static void main(String[] args)
+    {
+         System.out.println(String.class.getClassLoader());
+    }
+}   
+a) null
+b) Bootstrap ClassLoader
+c) AppClassLoader
+d) Exception at runtime
+
+Ans - a) null
+
+Explanation:
+String.class is a built-in Java class from the java.lang package, which is part of the Java core library. Core library classes are loaded by the Bootstrap ClassLoader. When you call getClassLoader() on a class loaded by the Bootstrap ClassLoader, it returns null because the Bootstrap ClassLoader is implemented in native code and has no Java representation.
+
+
+Q8) What is the output of the following code?
+public class Test 
+{
+    public static void main(String[] args)
+    {
+        System.out.println(Test.class.getClassLoader());
+    }
+}
+a) null
+b) Bootstrap ClassLoader
+c) AppClassLoader
+d) PlatformClassLoader
+
+Ans - c) AppClassLoader
+
+
+Q9) What is the output of the following code?
+public class Test 
+{
+    public static void main(String[] args)
+    {
+        System.out.println(Test.class.getClassLoader().getParent());
+    }
+}
+a) null
+b) Bootstrap ClassLoader
+c) AppClassLoader
+d) PlatformClassLoader
+
+Ans - d) PlatformClassLoader
+
+
+Q10) What is the output of the following code?
+public class Test
+{
+    public static void main(String[] args) throws ClassNotFoundException {
+        ClassLoader cl = ClassLoader.getSystemClassLoader();
+        Class cls = cl.loadClass("java.lang.String");
+        System.out.println(cls.getClassLoader());
+    }
+}
+
+a) null
+b) Bootstrap ClassLoader
+c) Exception at runtime
+d) System ClassLoader
+Ans - a) null
+==========================================================================================
+MCQs :
+-------
+Q1) Find the Output :
+
+public class Test 
+{
+    static 
+    {
+        System.out.println("Static Block Executed");
+    }
+    public static void main(String[] args) 
+    {
+        System.out.println("Main Method Executed");
+    }
+}
+
+Ans - Static Block Executed
+
+
+Q2) Find the Output :
+
+class A 
+{
+    static 
+    {
+        System.out.println("Class A Static Block");
+    }
+}
+
+class B extends A 
+{
+    static 
+    {
+        System.out.println("Class B Static Block");
+    }
+}
+
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        B obj = new B();
+        System.out.println("Main Method");
+    }
+}
+
+Ans - Class A Static Block
+      Class B Static Block
+        Main Method
+
+Q3) Find the Output :
+
+public class Test
+{
+    static 
+    {
+        System.out.println("Static Block Executed");
+	System.exit(0);
+    }
+}
+Ans - Static Block Executed
+
+
+Q4) Find the Output :
+
+class Demo 
+{
+	{
+		System.out.println("Non Static Block in Demo");
+	}
+
+    public Demo() 
+	{
+        System.out.println("Constructor of Demo");
+    }
+
+	static 
+	{
+        System.out.println("Static Block in Demo");
+    }
+}
+
+public class Test 
+{
+    public static void main(String[] args) 
+	{       
+        Demo d1 = new Demo();
+        Demo d2 = new Demo();
+    }
+}
+Ans - Static Block in Demo
+      Non Static Block in Demo
+      Constructor of Demo
+      Non Static Block in Demo
+      Constructor of Demo
+
+Q5) Find the Output :
+
+class X 
+{
+    static 
+	{
+        System.out.println("Class X Static Block");
+    }
+}
+
+class Y extends X
+{
+    static
+	{
+        System.out.println("Class Y Static Block");
+    }
+}
+
+public class Test 
+{
+    public static void main(String[] args) 
+	{
+        X obj1 = new X();
+        Y obj2 = new Y();
+        Y obj3 = new Y();
+    }
+}
+Ans - Class X Static Block
+      Class Y Static Block
+
+
+Q6) Find the Output :
+
+class Test
+{
+    static 
+    {
+        System.out.println("Static Block Executed");
+    }
+
+    static void display()
+    {
+        System.out.println("Static Method Executed");
+     }
+
+    public static void main(String[] args)
+    {
+        System.out.println("Main Method Started");
+        display();
+    }
+}
+Ans - Static Block Executed
+      Main Method Started
+      Static Method Executed
+
+Q7) Find the Output :
+
+class Demo
+{
+  public static final int VALUE;
+
+    public static void access() 
+    {
+        VALUE = 50;
+        System.out.println("Value is :" + VALUE);
+    }
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+        Demo.access();
+    }
+// This line will cause a compilation error because we cannot assign a value to a final variable after it has been declared.
+}
+
+Ans - Compilation Error: cannot assign a value to final variable VALUE
+
+
+Q8) Find the Output :
+
+class Demo
+{
+  public static final int VALUE;
+
+    static 
+    {
+        VALUE = 50;
+        System.out.println("Value is : " + VALUE);
+    }
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+       System.out.println("Main Method VALUE = " + Demo.VALUE);
+    }
+}
+
+Ans - Value is : 50
+      Main Method VALUE = 50
+
+Q9) Find the Output :
+
+class Singleton 
+{
+    private static Singleton instance;
+
+    static 
+	{
+        instance = new Singleton();
+        System.out.println("Static Block: Singleton Instance Created");
+    }
+
+    private Singleton() 
+	{
+        System.out.println("Constructor: Singleton Object Created");
+    }
+
+    public static Singleton getInstance() 
+	{
+        return instance;
+    }
+
+	public void greet()
+	{
+		System.out.println("Hello Everyone!!!");
+	}
+}
+
+public class Test
+{
+    public static void main(String[] args) 
+	{
+        System.out.println("Main Method");
+        Singleton obj1 = Singleton.getInstance();
+		obj1.greet();        
+    }
+}
+
+Ans - Static Block: Singleton Instance Created
+      Constructor: Singleton Object Created
+      Main Method
+      Hello Everyone!!!
+
+Q10) Find the Output :
+
+class Foo
+{		
+	Foo()
+	{
+		System.out.println("No Argument constructor..");
+	}
+
+	{
+		System.out.println("Instance block..");
+	}
+
+	static
+	{
+		System.out.println("Static block...");
+	}
+	
+}
+public class Test 
+{	
+	public static void main(String [] args) 
+	{		
+		System.out.println("Main Method Executed ");		
+	}	
+}
+
+Ans - Static block...
+      Main Method Executed
+
+Q11) Find the Output :
+
+class  Alpha        
+{
+	static 
+	{
+		System.out.println("A");
+	}
+	 
+	{
+		System.out.println("B");
+	}
+
+	Alpha() 
+	{		
+		System.out.println("C");
+	}
+}
+class Beta extends Alpha
+{
+	static 
+	{
+		System.out.println("D");
+	}
+	 
+	{
+		System.out.println("E");
+	}
+
+	Beta() 
+	{		
+		System.out.println("F");
+	}
+
+}
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		new Beta(); 
+	}
+}
+
+Ans - A
+      D
+      B
+      C
+      E
+      F
+
+Q12) Find the Output :
+
+class Demo 
+{	
+    static
+	{   
+		i = 100;		
+	}
+
+        static int i;
+}
+
+public class Test
+{
+    public static void main(String[] args) 
+	{
+        System.out.println(Demo.i);
+	}
+}
+Ans - 100
+
+
+Q13) Find the Output :
+
+class Demo 
+{	
+    static
+	{   
+		i = 100;
+		System.out.println(i);
+	}
+
+        static int i;
+}
+
+public class Test
+{
+    public static void main(String[] args) 
+	{
+        System.out.println(Demo.i);
+	}
+}
+
+Ans - error: illegal forward reference
+
+Q14) Find the Output :
+
+class Demo 
+{   
+	{   
+		i = 100;
+		System.out.println(i);
+	}
+        int i;
+}
+
+public class Test
+{
+    public static void main(String[] args) 
+	{
+          new Demo();
+	}
+}
+
+Ans - error: illegal forward reference
+
+Q15) Find the Output :
+
+class  Alpha        
+{
+   public static final int A;
+
+   static
+   {
+     print();
+	 A = 100;
+   }
+
+   public static void print()
+   {
+     System.out.println("Default value :"+A);
+   }
+}
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("User value :"+Alpha.A);
+	}
+}
+Ans - Default value :0
+      User value :100
+
+Q16) Find the Output :
+
+class Test
+{	
+	public static final Test t1 = new Test(); //t1 = null;
+	
+    static
+	{
+	   System.out.println("static block");
+	}
+
+	{
+	   System.out.println("Non static block");
+	}
+
+	Test()
+	{
+		System.out.println("No Argument Constructor");
+	}
+}
+
+public class Demo 
+{
+	public static void main(String[] args) 
+	{
+	   new Test(); 
+	}
+}
+
+Ans - static block
+      Non static block
+      No Argument Constructor
+      Non static block
+      No Argument Constructor
+
+Q17) Find the Output :
+
+class Sample
+{	
+	static 
+	{
+		System.out.println("Static Block");
+		x = m1();	
+		System.out.println(Sample.x);
+	}
+	
+	public static int m1()
+	{
+	   System.out.println("Static Method");
+	   return 100;	
+	}
+		
+	static int x; 
+}
+
+
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println(Sample.x);
+	}
+}
+Ans - Static Block
+      Static Method
+      100
+      100
+
+Q18) Find the Output :
+
+class  Alpha        
+{
+   public static void print()
+   {
+       x = 100;
+	   System.out.println(x);
+   }
+
+   static int x;
+}
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		Alpha.print();
+	}
+}
+Ans - 100
+
+
+Q19) Find the Output :
+
+class  Alpha        
+{
+   public static final int MAX_VALUE = 100;
+
+   static
+	{
+	   System.out.println("Static Block");
+	}
+}
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println(Alpha.MAX_VALUE);
+	}
+}
+
+Ans - 100
+
+Q20) Find the Output
+
+class  Alpha        
+{
+   public static final int MAX_VALUE = access();
+
+   static
+	{
+	   System.out.println("Static Block");
+	}
+
+    public static int access()
+	{
+		return 100;
+	}
+
+}
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println(Alpha.MAX_VALUE);
+	}
+}
+Ans - Static Block
+      100
+
+Q21)
+public class StaticTrick 
+{
+
+    static 
+    {
+        System.out.println("Static block: y = " + y);
+        y = 20;
+    }
+
+    static int y = 10;
+
+    public static void main(String[] args) 
+    {
+        System.out.println("Main: y = " + y);
+    }
+}
+Ans - Static block: y = 0
+      Main: y = 10
+
+Q22)
+class A 
+{
+    static 
+    {
+        System.out.println("Class A static block");
+    }
+}
+
+public class StaticTrick 
+{
+    static 
+    {
+        System.out.println("Class StaticTrick static block");
+    }
+
+    public static void main(String[] args) 
+    {
+        System.out.println("Main method");
+    }
+}
+Ans - Class StaticTrick static block
+      Main method
+
+Q23)
+class Parent 
+{
+    static 
+    {
+        System.out.println("Parent static block");
+    }
+}
+
+class Child extends Parent 
+{
+    static 
+    {
+        System.out.println("Child static block");
+    }
+
+    public static void hello()
+    {
+        System.out.println("Hello from Child");
+    }
+}
+
+public class StaticTrick5
+{
+    public static void main(String[] args) 
+    {
+        Child.hello();
+    }
+}
+Ans - Parent static block
+      Child static block
+      Hello from Child
+
+Q24)
+
+public class StaticTrick9
+{
+    static StaticTrick9 obj;
+
+    static 
+    {
+        obj = new StaticTrick9();
+        System.out.println("Static block executed");
+    }
+
+    StaticTrick9()
+    {
+        System.out.println("Constructor executed");
+    }
+
+    public static void main(String[] args) 
+    {
+        System.out.println("Main method");
+    }
+}
+Ans - Constructor executed
+      Static block executed
+      Main method
+
+Q25)
+public class StaticTrick 
+{
+
+    static final int X;
+    static final int Y;
+
+    static 
+    {
+        X = 5;
+    }
+
+    static
+    {
+        Y = 10;
+    }
+
+    public static void main(String[] args)
+    {
+        System.out.println("X = " + X);
+        System.out.println("Y = " + Y);
+    }
+}
+Ans - X = 5
+      Y = 10

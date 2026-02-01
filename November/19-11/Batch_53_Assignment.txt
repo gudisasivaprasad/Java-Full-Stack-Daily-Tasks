@@ -1,0 +1,50 @@
+ Read the input from java.lang.IO class. 
+
+Program 01:
+-----------
+Write a  program in Java that will generate and print the bill at Dominos for four chicken rolls (@ Rs 60 per chicken rolls) and three vegetable puffs (@ Rs 25 per vegetable puffs). There is a special discount of Rs 50 on the final bill amount. Calculate and print final bill as well as all item bill.
+
+
+Program 02:
+-----------
+Write a Java program to find Largest of Three Numbers.
+
+
+Program 03:
+----------
+Write a program in Java to display the following pattern on the screen without using loop.
+@@@@@@@@
+@      @
+@      @
+@      @
+@      @
+@      @
+@@@@@@@@
+
+
+Program 04:
+-----------
+Write a program to input the basic salary of a person. He gets 15% of the basic as HRA, 15% of the basic as Conveyance allowance and 10% of the basic as Entertainment allowance. The total salary is calculated by adding Basic + HRA + Conveyance + Entertainment Allowance. Calculate and print the total salary of person.
+
+
+Program 05 :
+-------------
+Write a program in java to Fahrenheit to Celsius Program
+Formula is :-  celsius=((fahrenheit-32)*5)/9;
+
+
+Program 06 :
+-------------
+A local electricity board wants to calculate monthly bills.
+Store the number of units consumed using a short.
+Use an int to store and calculate the bill amount.
+Apply the following tariff:
+Up to 100 units → ₹5/unit
+101–300 units → ₹7/unit
+Above 300 units → ₹10/unit
+Add a fixed charge of ₹50.
+
+
+Program 07:
+-----------
+Write a Java program to check if a given number is a palindrome or not. A number is a palindrome if it remains the same when its digits are reversed.

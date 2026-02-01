@@ -1,0 +1,49 @@
+Q1.Write a Java program to display all Strong numbers between 1 to 1000.
+Additionally:
+
+Display All  Strong numbers exist in this range
+
+Display the sum of all Strong numbers found.
+
+Example:-
+
+Strong numbers between 1 to 1000:
+1 2 145
+
+Sum of Strong Numbers = 148
+
+
+
+
+Q2.Write a Java program to accept one number using Command Line Arguments and:
+Check whether the given number is a prime number or not
+If the input is negative, display an appropriate error message.
+
+Example:-
+input:
+java PrimeCheck 7
+output:
+7 is a Prime Number.
+input:
+java PrimeCheck -5
+output:
+Negative numbers are not allowed.
+
+
+
+
+Q3. Write a java program to accept three numbers at the command
+prompt & find the largest.
+Display the sum and average of the three numbers.
+
+
+Example:
+
+Input:
+java ThreeNumbers 10 30 20
+
+Output:
+
+Largest Number = 30
+Sum = 60
+Average = 20.0

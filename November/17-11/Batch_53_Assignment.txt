@@ -1,0 +1,93 @@
+MCQ :
+------
+a) What is the Output :
+
+void main ()
+{
+	IO.println ("Hello India");  
+}
+
+
+public static void main(String [] args)
+{
+	IO.println("Hello World");
+}
+
+-----------------------------------------------------------------------------------------
+b) What is the Output :
+
+void main(String [] args)
+{
+	IO.println("Hello World");
+}
+
+
+void main()
+{
+	IO.println("Hello India");
+  
+}
+
+
+-----------------------------------------------------------------------------------------
+c) What is the Output :
+
+void main(int [] args)
+{
+	IO.println("Hello India");
+}
+
+
+void main()
+{
+	IO.println("Hello World");
+  
+}
+
+-----------------------------------------------------------------------------------------
+d) What is the Output :
+
+void main ()
+{
+	IO.println ("Hello India");  
+}
+
+void main (String [] args)
+{
+	IO.println ("Hello India");  
+}
+
+public static void main(String [] args)
+{
+	IO.println("Hello World");
+}
+
+
+-----------------------------------------------------------------------------------------
+e) What is the Output :
+
+int main()
+{
+  IO.println("Java 25 new feature");
+  return 0;
+}
+
+==========================================================================================
+Coding :
+--------
+Q1) Write a program to perform addition,subtraction, multiplication and 
+    division between two numbers using 3rd variable.
+
+Q2) Write a program to perform addition using command line Argument.
+
+Q3) Write a program to find out the area of circle by taking the value
+    from Command line arguments.
+
+Q4) Write a program to swap two numbers without using 3rd variable using 
+    command line argument.
+ 
+Q5) Write a Java program to calculate the factorial of a number where number must be taken from command line argument.
+
+Q6) Write a Java program to verify whether a number is armstrong or not where number must be taken from command line argument.
+
+ 
