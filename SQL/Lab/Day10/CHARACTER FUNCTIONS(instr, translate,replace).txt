@@ -1,0 +1,210 @@
+                            CHARACTER FUNCTIONS
+                          ======================
+
+1.Check following instr() queries outputs
+
+
+instr():-it is used to check whether the substring is existed 
+=======         in the given string or not.
+
+
+•if sub string is existed in the given string, it returns the position.
+
+•if sub string is not existed in the given string ,it returns 0.
+
+
+syntax: instr(columnname(or)string , sub string, searching position,= o of occurrences from searching position);
+
+
+Searching position -> +ve or –ve
+Searching and No of occurrences -> must be numbers.
+
+
+ always instr() returns position based on last 2 parameters 
+but oracle server counts number of characters always left side first 
+position onwards.
+
+
+
+SQL> select instr('ABCDEFGHCDKMNBCDJ','CD',1,1) from dual;
+
+
+
+SQL> select instr('ABCDEFGHCDKMNBCDJ','CD',5,2) from dual;
+
+
+
+SQL> select instr('ABCDEFGHCDKMNBCDJ','CD',-5,2) from dual;
+
+
+
+SQL> select instr('krishna stami lord krishna jai krishna','krishna',1,2) from dual;
+
+
+
+SQL> select instr('krishna stami lord krishna jai krishna','krishna',-1,3) from dual;
+
+
+
+SQL> select instr('gowtham raj','raj') from dual;
+
+
+
+SQL> select instr('gowtham raj','sai') from dual;
+
+
+
+SQL> select instr('ABC*D','*') from dual; // it returns the position of the 
+                                             delemiters(special characters)
+
+
+
+
+
+
+2.Write a query to check whether the substring 'radha' is exists in the given string or not
+
+Given string: krishna stami lord krishna jai krishna
+
+
+
+
+3.Find 4th apperence of 'a' in the string 'Maharashtraa'[INTERVIEW QUESTION]
+
+
+
+4. What is output of the below query
+
+Select Substr( ‘Ameerpet Hyderabad’, Instr(‘Ameerpet Hyderabad’, ‘ ‘,1,1)+1 ) from Dual;
+
+a) Ameeerpet
+
+b) Hyderabad
+
+c) Ameerpet Hyderabad
+
+d) Error
+
+Answer:
+
+
+
+
+
+5.Write a query which is used to retrieve first part(before first .)
+  from the MAILID column in the EMAILS table by using
+  substr(),instr() functions 
+
+create table emails
+(
+mailid varchar2(30)
+);
+
+insert into emails values('abc.xyz@gmail.com');
+insert into emails values('pqrst.kkkk@gmail.com');
+commit;
+
+
+
+
+SQL>SELECT * FROM EMAILS;
+
+    MAILID
+  ----------
+  abc.xyz@gmail.com
+  pqrst.kkkk@gmail.com
+
+
+
+6.Check the following query outputs
+
+ *
+***Translate() and Replace():-
+ * =========================
+
+Translate() is used to replaces character by character 
+where as replace() is used to replaces character by string (or)
+string by string.
+
+
+SQL> select translate('india','in','xy'),replace('india','in','xy') from dual;
+
+
+
+SQL> select translate('JOHN','H','N') from dual;
+
+
+
+SQL> select replace('JOHN','H','N') from dual;
+
+
+
+SQL> select translate('JOHN','H','AMMERPET') from dual;
+
+
+
+SQL> select replace('JOHN','H','AMMERPET') from dual;
+
+
+
+SQL> select translate('ABCDEF','FEDCBA','123456') from dual;
+
+
+
+SQL> select replace('A B C',' ','india')from dual;
+
+
+
+7.What is output of the below query ?
+
+Select Replace( 'JACK AND JUE', 'J', 'BL' ) FROM DUAL;
+
+a) BLACK AND BLUE  	
+
+b) BLCK AND BLUE      
+
+c) BACK AND JUE	        
+
+d) None of the Above
+
+Answer: A
+
+
+8.Create order1 table and set the EXTRACT_VALUE as following by 
+  using substr(),instr()[Delta Technologies Technical Round Interview Question]
+
+
+ORDER_ID            ORDERDATE
+--------------     -----------
+ORDER_980125        12-MAY-03
+ORDER_9712667       13-MAY-03
+
+
+EXPECTED OUTPUT:
+===============
+ORDER_ID             ORDERDATE     EXTRACT_VALUE
+---------------     ----------    --------------
+ORDER_980125        12-MAY-03        980125     
+ORDER_9712667       13-MAY-03        9712667
+
+
+
+9.Create order2 table and set the EXTRACT_VALUE as following 
+  by using substr(),instr()[Delta Technologies Technical Round Interview Question]
+
+ORDER_ID             ORDERDATE
+-------------------- ---------
+ORDER_356125_PID1    12-MAY-03
+ORDER_98032667_PID2  13-MAY-03
+
+
+
+update order2 set extract_value=substr(order_id,instr(order_id,'_',1,1)+1,instr(order_id,'_',1,2)-instr(order_id,'_',1,1)-1)||substr(order_id,-1,1);
+
+
+EXPECTED OUTPUT:-
+================
+ORDER_ID               ORDERDATE     EXTRACT_VALUE
+--------------------   ---------     --------------
+ORDER_356125_PID1      12-MAY-03       3561251 
+ORDER_98032667_PID2    13-MAY-03       980326672

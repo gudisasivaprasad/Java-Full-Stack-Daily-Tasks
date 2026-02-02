@@ -1,0 +1,403 @@
+                                 CLAUSES TASK
+                                ==============
+
+
+GROUP BY:- Group by clause is used to divide similar data items
+=========  into set of logical groups. And also group by clause    
+           reduces no of rows in each group.
+
+Syntax:-select columnname.......
+======  from tablename 
+        group by columnname;
+
+Execution order:-
+==============
+1.FROM 
+2.WHERE
+3.GROUP BY 
+4.HAVING
+5.SELECT
+6.ORDER BY
+
+
+RULE:- Other than group function columns specified after select
+=====  then those all columns must be specified after group by.
+       Otherwise oracle server returns an error not a GROUP BY 
+       expression.
+
+EX1:-
+==== 
+    SQL>select deptno,job
+        from emp
+        group by deptno,job;
+
+      DEPTNO          JOB
+    ----------     ---------
+        20          MANAGER
+        20          ANALYST
+        10         PRESIDENT
+        10           CLERK
+        30         SALESMAN
+        10          MANAGER
+        20           CLERK
+        30          MANAGER
+        30           CLERK
+
+EX2:-
+====
+
+     SQL> select deptno,job,sum(sal)
+          from emp
+          group by deptno,job;
+
+
+    DEPTNO JOB         SUM(SAL)
+---------- --------- ----------
+        20 MANAGER         4175
+        20 ANALYST         8400
+        10 PRESIDENT       6300
+        10 CLERK           2600
+        30 SALESMAN       10900
+        10 MANAGER         3750
+        20 CLERK           4300
+        30 MANAGER         3950
+        30 CLERK           2050
+
+
+Note:- In all relational databases we can also use group by clause
+=====   without using group functions.
+
+EX:-
+==    
+
+    SQL>select deptno from emp
+        group by deptno;
+
+        DEPTNO
+      ----------
+          30
+          10
+          20
+
+step1:-group by deptno;
+
+deptno                                                  Resultset table    
+------                                                  ----------------
+10                         10 it reduces into '1' 10      deptno
+20                         10--------------------->         10                                         30                         10
+10 similar data items into 20 it reduces into '1' 20
+20  set of logical groups  20---------------------->        20
+30-----------------------> 20
+10                         30 it reduces into '1' 30
+20                         30 ---------------------->       30
+30                         30
+
+
+step2:-select deptno from....
+=====          | 
+               |-------->This deptno is selected from result set table
+                         not from the original table.
+
+
+        DEPTNO
+      ----------
+          30
+          10
+          20
+
+
+HAVING Clause:- After group by clause we are not allowed to use where
+=============   clause. In place of this one ANSI/ISO SQL provided
+                another clause having.
+               
+Generally if we want to restrict the rows in a table then we are using 
+where clause whereas if we want to restrict groups after group by
+then we must use having clause.
+
+Generally we are not allowed to use group functions in where clause 
+whereas we can also use group functions in having clause.
+
+-----------------------------------------------------------------------------------------------------
+1.Write a query to display no of employees in each state 
+  from following PERSON table
+
+-->simply i want state wise count
+
+                                 group by
+EG:    Detailed data-------------------------------------->Summarized data
+
+
+       EMPID       ENAME        STATE                     STATE      COUNT(*)      
+     ---------    -------      --------                  -------    ---------         
+         1         SUBBARAO      AP                         AP          4       
+         2         KIRAN         TS                         TS          2           
+         3         NITISH        TS                         MP          1           
+         4         ADITYA        MP                         MH          1           
+         5         GOWTHAM       AP                                     
+         6         VISWAJITH     MH 
+         7         SURYA         AP
+         8         SHREYAS       AP
+
+
+
+
+
+
+
+2.Write a query to display the state wise gender wise no of employees 
+  from the following PERSONS table?[FRAGMA DATA INTERVIEW QUESTION]
+
+      EMPID     ENAME         GENDER        STATE
+      ------   ---------     --------      -------
+         1     SUBBARAO         M             AP
+         2      KAVYA           F             TS
+         3      KIRAN           M             TS
+         4     GOWTHAM          M             AP
+         5     PREETI           F             AP
+         6     SURYA            M             AP
+         7     ANUSHKA          F             AP
+         8     SHREYAS          M             TS
+
+
+
+
+
+
+3.Write a query to display number of employees in each department from emp table
+  using group by?[Vertex Solutions company Technical Round Interview Question]
+
+
+
+
+
+4.Write a query to display number of employees in each job from emp
+   table using group by?
+
+
+
+
+
+5.Write a query to display department wise and job wise number of employees 
+  emp table using group by ?
+
+
+
+
+
+6.Write a query to display department wise average salary from emp table 
+  by using group by ?
+
+
+
+
+
+7.Write a query to display department wise minimum and maximum salary
+  from emp using group by?
+
+
+ 
+
+
+8.Write a query to display Department Number,Number of Employees,Total Salary,Average Salary
+  from emp table
+
+
+
+
+
+9.Write a query to display those departments having more than 3
+  employees from emp table?
+
+
+
+
+
+10.Write a query to display the state from PERSON table which are having
+   more than 3 employees ?[Technical Round INTERVIEW QUESTION]
+
+
+
+
+
+
+11.Write a query to display those departments sum(sal) more than 9000
+   from emp table by using group by clause?
+
+
+
+
+
+ **
+*12*Write a query to display duplicate records from the
+ ** following EMP111 table ?(V.V.I.M.P)
+
+SQL>select * from EMP111;
+
+       EMPNO        ENAME
+    ---------    ----------
+         1         SURYA
+         2         ANUSHKA
+         3         ANUSHKA
+         4         GOWTHAM
+         5         SURYA
+         6         SATYA
+
+
+
+
+
+
+  *
+*13*.Write a query to display year, no of employees per year 
+  *  in which year more than one employee was hired from 
+            emp table using group by?
+
+
+
+
+
+
+14.Write a query to display no of employees joined in each QUARTER 
+   from emp table using group by?
+
+
+
+
+
+
+15.Write a query to display state wise, region wise no of employees
+   from the following EMP222 table ?[MOCK INTERVIEW QUESTION]
+
+   EMPID          ENAME             STATE               REGION
+  --------     -----------      ----------------      ---------
+    1001         SUBBARAO        ANDHRA PRADESH         SOUTH
+    1002         KIRAN             TELANGANA            SOUTH
+    1003         SHREYAS           MAHARASHTRA          WEST
+    1004         GOWTHAM         ANDHRA PRADESH         SOUTH
+    1005         PALLAVI         MADHYA PRADESH         CENTRAL
+    1006         RAHUL               BIHAR              EAST
+
+
+
+16.Write a query to display each department average salary, but show only departments
+  whose average salary is greater than 2000.
+
+
+
+
+
+
+17.Write a query to display the number of employees who joined in the month
+   of January or September from the EMP table using group by.
+
+
+
+
+
+
+18.Write a query to display the total salary of employees in departments
+   10 and 30 from the EMP table using group by.
+
+
+
+
+
+
+
+19.Write a query display LastName and the sum of Age from the emp333 table
+   for all users with a LastName='Smith'.
+   The column title of the summed ages should be SUMAGE.
+
+your output should look like the following[Helical solutions Pvt.Ltd Technical Round INTERVIEW                                                    QUESTION] 
+
+
+SQL> select * from emp333;
+
+        ID     FIRSTNAME     LASTNAME       AGE
+      ------  -----------   ----------    --------
+         1       John         Smith          20
+         2       Jenny        Richards       28
+         3       Alice        Smith          15
+         4       Noah         Fritz          30
+         5       Mark         Smith          12
+
+
+EXPECTED OUTPUT:-
+================
+
+           LASTNAME        SUMAGE
+          ----------     ---------
+            Smith            47
+
+
+
+20.You are given a table ,territory.[Auto Rapido Interview Question 6LPA]
+
+Write a SQL query to get the number of territories in each region based on regionid.
+
+•The result should be in the increaing order of regionid
+
+Excepted Result Column Names:
+
+•regionid
+
+•number_of_territories
+
+sample input(territory table)
+============================
+
+  territoryid     territorydescription      regionid
+ -------------   ----------------------    ----------
+    01581              westboro                1
+    01730              bedford                 1
+    01833              georgetown              4
+    02116              boston                  4
+    02139              cambridge               2
+    02184              braintree               2
+    02903              providence              1
+    03801              hollis                  3
+    03801              portsmouth              3
+    06897              willton                 2
+
+
+sample output:
+=============
+
+ regionid          number_of_territories
+----------        -----------------------
+   1                   3
+   2                   3
+   3                   2
+   4                   2
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------
+ *
+***What are the differences b/w Where and Having clause?(V.V.I.M.P)
+ *
+-----------------------------------------------------------------------------------
+               Where                   |                  Having
+-----------------------------------------------------------------------------------
+1.Where clause is used to restricting  |1.Having clause is used to restricting 
+  the rows in a table                  |  the groups after group by.
+                                       |
+2.It filters the rows                  |2.It filters the groups
+                                       |
+3.We are not allowed to use group      |3.We can also use group functions in
+  functions in where clause.           |  having clause.
+                                       | 
+4.Where clause is executed before      |4.Having clause executed after
+  group by.                            |  group by.
+                                       |
+5.We can also use Where clause         |5.We can not use Having clause
+  with out group by                    |  with out group by
+                                       |    
+-----------------------------------***END***---------------------------------------
+
+

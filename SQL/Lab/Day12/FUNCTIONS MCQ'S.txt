@@ -1,0 +1,541 @@
+                                    FUNCTIONS MCQ'S
+                                 ===================
+
+1.Which function extracts a substring?
+
+a) TO_CHAR()
+
+b) SUBSTR()
+
+c) NVL()
+
+d) ROUND()
+
+
+Answer: 
+SUBSTR()
+
+
+
+2.Which function is used to count the number of rows in a table?
+
+a) COUNT(*)
+
+b) SUM(*)
+
+c) ROW_COUNT()
+
+d) TOTAL()
+
+
+Answer:  COUNT(*)
+
+
+3.What will NVL(salary, 0) do in SQL?
+
+a) Nullify salary values
+
+b) Replace all null salary values with 0
+
+c) Replace salary with NULL
+
+d) Replace 0 with NULL
+
+
+Answer: 
+Replace all null salary values with 0
+
+
+4.Which group function returns the largest value in a column AND Y?
+
+a) MIN()
+
+b) SUM()
+
+c) MAX()
+
+d) COUNT()
+
+
+Answer:  MAX() 
+
+
+
+5.The SUBSTR function in SQL is used to:
+
+a) Replace a substring with another string
+
+b) Extract a part of a string
+
+c) Convert numbers to strings
+
+d) Remove spaces from a string
+
+Answer: 
+Extract a part of a string
+
+
+6.What is the output of MOD(15, 4)?
+
+a) 4
+
+b) 3
+
+c) 15
+
+d) 11
+
+Answer: 
+b) 3
+
+
+7.Which of the following is an aggregate function?
+
+a) LENGTH
+
+b) COUNT
+
+c) TO_DATE
+
+d) NVL
+
+
+Answer: 
+COUNT
+
+
+
+8.What is the output of the following statement
+
+select Max(100,200) from dual;
+
+a) 100  
+   
+b) 100,200
+
+c) 200       
+    
+d) Error
+
+
+Answer: 
+d) Error
+
+
+9.A table T_COUNT has 12 number values as 1,2,3,32,1,1,null,
+   24,12,null,null,32
+
+predict the output of the below query
+
+select count(*) from T_count;
+
+a) 6
+
+b) 12            
+    
+c) 9
+
+d) Throws exception because COUNT function doesn't work with null values
+
+
+
+Answer:  
+b) 12
+
+
+10.select round(89.4),trunc(89.8) from dual;
+   Which values are displayed
+
+a) 89,90
+
+b) 90,90
+
+c) 90,89
+
+d) 89,89
+
+
+Answer: d) 89,89
+
+
+11.select round(45.95),trunc(45.95) from dual;
+  Which values are displayed
+
+a) 46 and 45
+
+b) 45 and 46
+
+c) 46 and 46
+
+d) none
+
+
+Answer: a) 46 and 45
+
+
+12.select greatest(500,800,100,150,200) from dual;
+
+a) 100
+
+b) 800
+
+c) 200
+
+d) error
+
+
+Answer: 
+b) 800
+
+
+13.select ceil(7.2),floor(7.8) from dual;
+
+a) 7,8
+
+b) none
+
+c) 8,8
+
+d) 8,7
+
+
+Answer: 
+d) 8,7
+
+
+
+14.Which of the following are the five built-in functions
+  provided by SQL?
+
+a) COUNT,SUM,AVG,MAX,MIN
+
+b) SUM,AVG,MIN,MAX,MULT
+
+c) SUM,AVG,MULT,DIV,MIN
+
+d) SUM,AVG,MIN,MAX,NAME
+
+
+Answer: 
+a) COUNT,SUM,AVG,MAX,MIN
+
+
+15.select ----- from instructor where deptname='Comp.Sci';
+
+Which of the following should be used to find the mean
+of the salary?
+
+a) Mean(salary)
+
+b) Avg(salary)
+
+c) Sum(salary)
+
+d) Count(salary)
+
+
+Answer:
+b) Avg(salary)
+
+
+16.Select SUBSTR('NARESH IT,HYDERABAD',1,9) from dual;
+
+
+a) NARESH            
+
+b) IT
+
+c) NARESH IT    
+
+d) HYDERABAD
+
+
+Answer:
+c) NARESH IT
+
+
+17.select instr('Maharashtraa','a',3,4) from dual;
+
+  What is the output of the following query
+
+a) 11
+
+b) 0
+
+c) 12
+
+d) None of the above
+
+
+Answer:
+a) 12
+
+
+18.SELECT ROUND(45.953, -1), ROUND(45.936, 2) FROM dual;
+
+   What is the output of the above query ?
+
+a) 46 and 45
+
+b) 46 and 45.93
+
+c) 50 and 45.93
+
+d) 50 and 45.94
+
+e) 45 and 45.93
+
+
+Answer:
+d) 50 and 45.94
+
+
+
+19.What error will occurred when we are executing following SQL query
+
+    SQL> select * from emp where sal= min(sal);
+
+a) The query will return all rows where the salary equals
+    to the total salary.
+
+b) The query will return only one row.
+
+c) group function is not allowed here
+
+d) not a single-group group function
+
+
+ANSWER:- c) group function is not allowed
+
+
+20.Which function can be used to replace NULL values with
+   user defined values?
+
+a) NVL
+
+b) SUM
+
+c) COUNT
+
+d) ROUND
+
+Answer: 
+a) NVL
+ 
+
+
+21.Which of the following SQL statements will retrieve the highest salary
+    from the employees table in Oracle?
+
+a) SELECT MAX(salary) FROM employees;
+
+b) SELECT TOP 1 salary FROM employees ORDER BY salary DESC;
+
+c) SELECT salary FROM employees WHERE salary = MAX(salary);
+
+d) SELECT FIRST(salary) FROM employees;
+
+
+Answer: 
+a) SELECT MAX(salary) FROM employees;
+
+
+22.Which three tasks can be performed using SQL functions ? (Choose
+     three.)
+
+a) Combining more than two columns or expressions into a single 
+   column in the output
+
+b) Displaying a date in a non default format
+
+c) Substituting a character string in a text expression
+   with a specified string
+
+d) Finding the number of characters in an expression
+
+
+
+Answer: 
+
+### a) Combining more than two columns or expressions into a single column in the output  
+❌ **Not counted here**
+
+- `CONCAT()` function in Oracle **combines only TWO arguments**
+- More than two columns usually done using `||` **operator**, not a single function
+- So this option is **not correct as per function definition**
+
+---
+
+### b) Displaying a date in a non-default format  
+✅ **Correct**
+
+- Done using **`TO_CHAR(date,'format')`**
+- Example:
+```sql
+TO_CHAR(hiredate,'DD-MON-YYYY')
+```
+
+---
+
+### c) Substituting a character string in a text expression with a specified string  
+✅ **Correct**
+
+- Done using **`REPLACE()`**
+- Example:
+```sql
+REPLACE('HELLO WORLD','WORLD','SQL')
+```
+
+---
+
+### d) Finding the number of characters in an expression  
+✅ **Correct**
+
+- Done using **`LENGTH()`**
+- Example:
+```sql
+LENGTH(ename)
+```
+
+---
+
+## ✅ **Final Correct Answers (Choose three):**
+**b, c, d**
+
+---
+
+### 🧠 Exam memory line:
+> **SQL functions can format, replace, and measure data**
+
+If you want, I can give  
+✔ similar MCQs  
+✔ trick questions  
+✔ one-line elimination logic for exams
+
+
+23.Which Oracle function can be used to find the length of a string?
+
+a) LENGTH()
+
+b) SIZE
+
+c)  STRINGLEN
+
+d) CHAR_LENGTH
+
+
+Answer:- 
+a) LENGTH()
+
+24.Select substr('NARESHIT',7,8) FROM DUAL;
+
+a) NARESH	
+
+b) IT		
+
+c) NARESHIT
+
+d) ESHIT
+
+Answer:
+b) IT
+
+25.What is output of the below query ?
+
+Select Replace( 'JACK AND JUE', 'J', 'BL' ) FROM DUAL;
+
+a) BLACK AND BLUE  	
+
+b) BLCK AND BLUE        
+
+c) BACK AND JUE	   
+
+d) None of the Above
+
+Answer:
+a) BLACK AND BLUE
+
+
+26.What is the output of the following query?
+
+Select '03-jan-2026' + 1 from dual;
+
+a) 04-jan-26
+
+b) 03-jan-26
+
+c) Error
+
+d) None of the above
+
+Answer:
+a) 04-jan-26
+
+
+
+
+27.Which function is used in SQL to convert a number or date to a string?
+
+a) TO_DATE
+
+b) TO_CHAR
+
+c) TO_NUMBER
+
+d) SUBSTR
+
+
+Answer:
+b) TO_CHAR
+
+
+28.The function TO_DATE('15-SEP-25', 'DD-MON-YY') will return:
+
+a) A number
+
+b) A character string
+
+c) A DATE
+
+d) NULL
+
+
+Answer: 
+c) A DATE
+
+
+
+29. Which of the following statements are true about the COUNT function?
+
+a) The COUNT function counts the number of rows
+
+b) The COUNT(*) function counts the number of rows with duplicates and NULL values
+
+c) The COUNT(DISTINCT) function counts the number of distinct rows
+
+d) All of the above
+
+Answer:
+d) All of the above
+
+
+30.What is output of the below query
+
+Select Substr( 'Ameerpet Hyderabad', Instr('Ameerpet Hyderabad', ' ',1,1)+1 ) from Dual;
+
+a) Ameeerpet
+
+b) Hyderabad
+
+c) Ameerpet Hyderabad
+
+d) Error
+
+Answer:
+b) Hyderabad
+
+
+
+
+
+

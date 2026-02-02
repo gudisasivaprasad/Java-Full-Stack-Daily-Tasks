@@ -1,0 +1,50 @@
+                                          DDL & DML
+                                         ==============
+
+
+1.Create STUDENTS table with following columns and insert the records as following
+
+     SID        SNAME         MARKS        GRADE          DOB
+   -------    ---------    ---------      --------     ----------
+      1         SURYA          82            B          31-DEC-97
+      2         KIRAN          20            F          18-SEP-96
+      3         ANUSHKA        98            A          22-APR-98
+      4         GOWTHAM        64            C          06-JAN-95
+      5         NITISH         45            D          12-MAR-96  
+
+
+
+2.Write a query to add a new column email into STUDENTS table.
+
+
+3.Write a query to increase the size of sname column to 20 in STUDENTS table
+
+
+4.Write a query to drop the grade column from STUDENTS table.
+
+
+5.Write a query to rename the column SNAME to NAME in the 
+  STUDENTS table.
+
+
+6.Write a query to completely delete the STUDENTS table along with its structure.
+
+
+7.Write a query to restore the STUDENTS table.
+
+
+8.Write a query to rename the table STUDENTS to STUDENSTDATA.
+
+
+9.Write a query to remove all rows from the A1 table but keep its
+   structure for future use.
+ 
+    create table a1
+    (
+    sno number(10),
+    sname varchar2(10)
+    );
+ 
+insert into a1 values(1,'surya');
+insert into a1 values(2,'anushka');
+commit;

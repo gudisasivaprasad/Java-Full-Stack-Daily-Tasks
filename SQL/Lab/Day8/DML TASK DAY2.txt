@@ -1,0 +1,93 @@
+
+                                      DML TASK
+                                   =============
+
+NOTE:-Before we are performing all these update and delete operations.
+====      better to create one more copy of emp table as follows
+
+create table emp1
+as
+select * from emp;
+
+
+
+------------------------------------------------------------------------------------------------------
+
+1.Set salary to 3500 for the employee whose employee number is 7934 
+  from emp1 table?
+ 
+
+
+2.Set job to MANAGER & increase 2000 rupees to an employee whose
+  employee no is 7369 from emp1 table?
+
+
+
+3.Increase the salary by 20% whose job title is MANAGER from emp1 table?
+
+
+
+4.Update the employees salary to 12000 whose current salary is 5000 
+
+
+
+5.Increase the salary by 1000 rupees for all employees in the emp1 table?
+
+
+
+6.increase 20% on salary, 15% on commission to the employees
+  who are getting commission from emp1 table?
+
+
+
+7.Set commission to 800 to the employees who are not getting 
+  commission from emp1 table?
+
+
+
+8.Write a query to delete 7521,7698,7900 employees commission
+  
+                      (OR)
+
+  Set comm has null whose empno are 7521,7698,7900 from emp1 table?
+
+
+
+9.increase 10% on salary who joined in the year 1982 from emp1 table?
+
+
+
+10.increase 20% on salary who have more than 44 years of experience
+   in the emp1 table?
+
+
+
+11.increase 15% on salary to the employees whose annual salary is
+    more than 30000 in the emp1 table?
+
+
+
+12.increase 20% on salary for the employee whose name starts with
+   'A' and ends with 'S' from emp1 table?
+
+
+
+13.Delete an employee record whose employee number is 7900 from emp1 table?
+
+
+
+14.Write a query to delete the employee records whose experience is more than
+   44 years from emp1 table?
+
+
+
+15.delete all the managers records from emp1 table?
+
+
+
+16.delete all 10 , 30 department records from emp1 table?
+
+
+
+17.delete all records from emp1 table, And get it back the all    
+   the records by using rollback command ?

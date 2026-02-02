@@ -1,0 +1,255 @@
+                   GROUP FUNCTIONS Task
+                 =========================
+
+     oracle having following group functions.
+These are
+
+1)max()
+2)min()
+3)avg()
+4)sum()
+5)count(*)
+6)count(columnname)
+
+       all group functions are operate over no of values in a 
+table column and then returns single value.
+
+------------------------------------------------------------------------------------------------------
+1.Write a query to display total salary from emp table?
+
+
+
+2.Write a query to display total salaries of all managers from emp table?
+
+
+
+3.Write a query to display total salaries of 10,30 departments from table?
+
+
+
+4.Write a query to display average salary of all employees from emp table?
+
+
+
+5.Write a query to display average salary of all clerk from emp table?
+
+
+
+6.Write a query to display minimum salary from emp table? 
+
+
+
+
+7.Write a query to display maximum salary from emp table?
+
+
+
+
+8.Write a query to display maximum and minimum salary from emp table?
+
+
+
+
+9.Write a query to display the total no of employees in emp table?
+
+
+
+
+10.Write a query to display the no of managers in emp table?
+
+
+
+
+11.Write a query to display the no of employees in 10,30 departments
+   from emp table?
+
+
+
+
+12.Write a query to display the no of employees in 4th quarter
+   from emp table?
+
+
+
+13.Write a query to display the no of employees joined in 1981 year
+
+
+Count(column name):- It counts number of not null values within
+==================      a column. 
+
+14.Write a query to display how many employees are getting commission
+   from emp table?
+
+
+
+15.Write a SQL query to display
+
+   Count the number of shows(use alias NUMBER_OF_SHOWS) Scheduled after 1st February 2023.
+
+Your output should have a column as given below
+
+  NUMBER_OF_SHOWS
+
+
+NOTE:If a flight is scheduled on perticular date i.e considered as one show
+
+Number of shows=how many flights are scheduled after 01-feb-2023 
+
+
+CREATE TABLE FLIGHT 
+(
+FLIGHT_ID NUMBER(10),
+DEPATURE_DATE DATE
+);
+
+INSERT INTO FLIGHT VALUES (101, '10-JAN-2023');
+INSERT INTO FLIGHT VALUES (102, '25-JAN-2023');
+INSERT INTO FLIGHT VALUES (103, '02-FEB-2023);
+INSERT INTO FLIGHT VALUES (104, '10-JAN-2023');
+INSERT INTO FLIGHT VALUES (105, '05-MAR-2023');
+
+COMMIT;
+
+
+
+
+
+16.What is the output of the following statement
+
+select Max(100,200) from dual;
+
+A. 100  
+   
+B. 100,200
+
+C. 200       
+    
+D. Error
+
+
+Answer: Error
+MAX = column-wise
+GREATEST = value-wise
+
+
+
+17.A table T_COUNT has 12 number values as 1,2,3,32,1,1,null,
+   24,12,null,null,32
+
+predict the output of the below query
+
+select count(*) from T_count;
+
+A. 6
+
+B. 12            
+    
+C. 9
+
+D. Throws exception because COUNT function doesn't work with null values
+
+
+Answer: 12
+
+
+18.What result will the following query return [Cognitus Company Technical Round MCQ]
+
+SELECT COUNT(*) FROM ORDERS WHERE DISCOUNT=NULL;
+NULL ni check cheyyali ante = kaadu
+✅ IS NULL / IS NOT NULL matrame
+
+ANS = 0
+
+------------------------------------------------------------------------------------------------------
+                               NVL FUNCTION
+                             ===============
+
+
+1.Write a SQL query to display the employee name, sal, comm, and total salary (sal + comm) 
+  of all employees from emp table ?
+
+
+
+
+------------------------------------------------------------------------------------------------------
+Round(m,n):- It rounds given floated valued number 'm' 
+==========                based on 'n'.
+
+
+Eg:-
+====
+SQL> select round(1.8) from dual;
+                    |--->checking above 50% or below 50%
+
+            2
+
+
+
+SQL> select round(1.23456,3) from dual;
+
+          1.235
+    
+   round(1.23456,3) -->+ve number checks left to right up to 
+                         3 decimal
+
+
+      
+Execution:-
+==========
+      
+Step1:- 1.234  ---->(Here remaining number 56 is above 50% (out of 100))
+  
+step2:- 1.234               
+            1
+        =====
+        1.235
+        =====   
+
+
+Note:- Round function always checks remaining number. if remaining
+=====     number is above 50% then automatically 1 is added
+               to the rounded number.
+
+
+Eg:-
+===
+ SQL> select round(1285.765,-1) from dual;
+
+       -4-3-2-1
+           1285.765,-1  ------>-ve sign take decimal right to left
+          <----    
+
+
+Execution:-
+=========
+step1:-1280 (-1 position replaced with 0.5 is above 
+                 50%(out of 10))
+                                 
+
+
+step2:-    1280
+             1    (1 is added to other than zero)
+          ======
+           1290
+          ======   
+
+
+SQL>select round(1285,-2) from dual;
+
+Execution:-
+==========
+Step1: 1285   ( Here 85 is replace with 00 and also
+                85 is above 50%(out of 100)) 
+
+
+Step2: 1200
+        1
+      ======
+       1300
+      ======
+
+
+1.Write an SQL query to round the SALARY column to the nearest
+   thousand in the EMP table.
+
+

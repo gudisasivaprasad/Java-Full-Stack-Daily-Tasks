@@ -1,0 +1,246 @@
+                                OPERATORS TASK
+                               =================
+
+SQL> SELECT * FROM ITEM;
+
+   ITEM_NO    ITEM_NAME    COLOR       ITEM_SIZE      PRICE     PURCHASED_DATE
+  --------   ----------  ----------   ----------   ----------  ---------------
+      1        Shirt        Red           40          500         02-JAN-25
+      2        Pant         Blue          42          799         10-NOV-24
+      3        Saree        Pink                      1200        19-MAR-23
+      4        Chudidar     Green         38          899         16-JAN-25
+      5        Lehanga      Yellow                    1500        24-AUG-25
+      6        Shirt        Blue          42          550         16-APR-25
+      7        Pant         Black         40          750         12-DEC-24
+      8        Saree        Black                     1300        18-SEP-24
+
+1.Write a query to display item name, color and price of items whose price is more than 800.
+
+
+
+2.Write a query to display all items details where the color is not 'Black'.
+
+
+
+3.Write a query to display the items purchased after 1st February 2025
+
+
+
+4.Write a query to display the item details where the item name is either 
+  shirt,saree,or chudidar.
+
+
+
+
+5.Write a query to display all details of the item where the itemname is 'Shirt' 
+  and the itemsize is 42.
+
+
+6.Write a query to display item details where the item name is saree and 
+  color must be pink.
+
+
+
+
+7.Write a query to display item details where the item prices between 500 and 1200.
+
+
+
+8.Write a query to display item details where the items were purachased in 2024
+
+
+
+9.Write a query to display items where the item sizes are NULL
+
+
+
+10.Write a query to display items where the itemname start with 'S'
+
+
+
+11.Write a query to display the details of the item where the ITEM_NAME is Shirt and 
+   the COLOR is 'Red' and the ITEM_SIZE is 40.
+
+
+
+12.Write a query to display items from the ITEM table where:
+
+• The item is either a 'Shirt' or a 'Pant'
+
+• The price is between 500 and 800
+
+• The item was purchased in the year 2025
+
+• The color is not 'Red' or 'Black'
+ 
+-----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

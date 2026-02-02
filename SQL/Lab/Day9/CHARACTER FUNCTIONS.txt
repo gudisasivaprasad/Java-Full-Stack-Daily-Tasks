@@ -1,0 +1,296 @@
+                               Functions Task
+                             =================
+
+TOPIC:CHARACTER FUNCTIONS(upper,lower,initcap,length,substr,lpad,rpad)
+                         
+
+ *
+***Dual :- Dual is an oracle predefined virtual table which contains only
+ *         one row and one column. Dual table is used to test oracle
+           predefined, user defined functions functionality.
+
+
+    when ever we are installing oracle server then automatically
+dual table is created with in SYS user but we are allowed to use
+dual table in all other users in oracle database.
+
+
+
+ *
+***Note:- in oracle by default datatype of the dual table column
+ * =====     is varchar2.
+
+ 
+SQL> select * from dual;
+
+     D    ------->dummy column
+   -----
+     X
+
+SQL>desc dual;
+
+ Name                Type
+-------          ------------
+ DUMMY            VARCHAR2(1)
+
+
+
+Testing predefined functions functionality:-
+==========================================
+EX:-
+==
+sql>select nvl(null,40) from dual;
+   
+             40
+
+sql>select nvl(20,30) from dual;
+
+             20
+
+     by using dual table we can also perform mathematical
+operations.
+ 
+
+Eg:-
+===
+SQL> select 100+200 from dual; //one value as result &
+                                 work with non table data.
+
+•When we want to get one value as result and we want to work with 
+ non table values then use dual.
+
+------------------------------------------------------------------------------------------------------
+
+1.Write a query to display all employee names to uppercase in emp table 
+ 
+
+
+2.Write a query to display all employee names in lowercase from emp table
+  
+
+
+3.Update all item names in the ITEM table to upper case
+  
+
+
+4.What is the output of the following query
+
+SQL>SELECT INITCAP('ab cd ef') from dual;
+
+a) AB CD EF
+
+b) Ab Cd Ef
+
+c) Ab cd ef
+
+d) ab cd ef
+
+Answer:- B
+
+
+
+5.Write a query to display the employee records whose employee names having 4 characters
+  from emp table by using length function?
+
+
+
+
+6.Write a query to display the employee name and the length of each name
+  from the emp table by using appropriate character function ?
+
+
+
+7.Write a query to display the employees records whose ename length
+  is more than 5 characters from emp table by using length() function?
+
+
+NOTE:-length function returns total length of string including 
+=====       spaces.
+
+
+8.What the o/p of the following
+
+SQL>select length('AB CD') from dual;
+
+a) 4
+
+b) 5
+
+c) 6
+
+d) None of the above
+
+Answer:- 5
+
+
+
+ *
+***Substr():- It will extract portion of the string within given
+ * ========        string based on last two parameters.
+
+
+Syntax:-
+========
+substr(columnname ,    substring position,   no of characters from position);
+          (or)           |->where to start          |->how many characters
+      string name                                      from that position onwards             
+
+
+
+Starting position-> can be +ve or –ve
+Starting position and no of characters position-> must be numbers
+
+
+
+9.Check the following substr() queries output
+
+SQL>select substr('ABCDEFGH',2,3) from dual;
+
+
+SQL> select substr('ABCDEFGH',-2,3) from dual; 
+
+
+SQL> select substr('ABCDEFGH',-5,1) from dual;
+
+
+SQL>select substr('GOWTHAM RAJ',1,7) from dual;
+
+
+SQL>select substr('GOWTHAM RAJ',9) from dual;
+
+         
+SQL>select substr('GOWTHAM RAJ',4,4) from dual;
+
+
+SQL>select substr('GOWTHAM RAJ',-1) from dual;
+
+
+SQL>select substr('GOWTHAM RAJ',-3,4) from dual;
+
+
+SQL>select substr('GOWTHAM RAJ',-8) from dual;
+
+
+
+10.Write a query to display employee name and MAILID. and MAILID should be created by using the 
+   first 4 characters of employee's name ,last 2 digits of their joining year,and appending
+   '@tcs.com' at the end,from EMP table ?[INTERVIEW QUESTION]
+
+
+
+11.Write a query to display the employees whose ename 2nd letter would be 'LA'
+   from emp table using substr() function?
+
+
+
+12.Write a query to display employee records whose names start with 'M' 
+   from emp table by using substr() function ?
+
+
+
+13.Write a query to display employee records whose names start with vowel 
+   from emp table by using substr() function?
+
+
+
+14.Write a query to display employee records whose names start and end with same letter
+   from emp table by using substr() function??
+
+
+
+15.Write a query to display employee records whose names start and end with vowel  
+   from emp table by using substring function ?
+
+
+
+16.Write a query to display AMEERPET from 'AMEERPET HYDERABAD' string.
+
+
+
+
+17.Select substr('NARESHIT',7,8) FROM DUAL;
+
+a) NARESH	b) IT			c) NARESHIT	d) ESHIT
+
+Answer: IT
+
+
+
+
+18.Create the table person123 as below
+
+    pname                 dob           
+  -------------       ----------       
+  kiran kumar         30-JUN-96
+  anushka shetty      12-DEC-88
+  gowtham raj         01-JAN-97
+  abishek sharma      16-APR-99
+  shreyas iyer        22-SEP-94
+
+
+--->After inserting the records. add a new column password
+    by using alter with add
+ 
+--->Set the password as first 3 letters of the person's name concatenated with
+    last 2 digits of the year from the databirth column by using substr() function
+
+
+EXPECTED OUTPUT:-
+===============
+
+      PASSWORD
+    -----------
+      kir96
+      anu88
+      gow97
+      abi99
+      shr94
+
+
+19.Check the following lpad() and rpad() queries output
+
+SQL>select lpad('kiran',10,'#') from dual;
+
+
+SQL>select lpad('gowtham',10,'$@') from dual;
+
+
+SQL>select lpad('X',4,'X') from dual;
+
+•The total length specified is 4  
+
+•The original string length is 1 (because 'X' is a single character)
+
+•Total length-string length = 4-1
+                            =  3 
+  
+•3 X's will be printed on left side of the 
+ given string. 
+
+•Since the original string is already 'X', after padding with 3 'X's on the left,
+ the output becomes 'XXXX'
+
+output:-
+=======
+XXXX
+
+
+
+SQL>select rpad('ABCD',10,'#')from dual;
+
+
+SQL>select rpad('kiran',10)||'hello' from dual;
+
+
+SQL>select rpad(ename,20)||sal from emp;
+
+
+
+
+
+20.Generate the message if the account number is 1234567473 
+
+EXPECTED OUTPUT:
+================
+Amount debited from XXXXXX7473
+

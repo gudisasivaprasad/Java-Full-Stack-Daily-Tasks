@@ -1,0 +1,217 @@
+                                           DDL & DML
+                                         ==============
+
+
+1.Create STUDENTS table with following columns and insert the records as following
+
+     SID        SNAME         MARKS        GRADE          DOB
+   -------    ---------    ---------      --------     ----------
+      1         SURYA          82            B          31-DEC-97
+      2         KIRAN          20            F          18-SEP-96
+      3         ANUSHKA        98            A          22-APR-98
+      4         GOWTHAM        64            C          06-JAN-95
+      5         NITHISH        45            D          12-MAR-96  
+
+
+2.Write a query to add a new column email into STUDENTS table.
+
+
+3.Write a query to increase the size of sname column to 20 in STUDENTS table
+
+
+4.Write a query to drop the grade column from STUDENTS table.
+
+
+5.Write a query to rename the column SNAME to NAME in the 
+  STUDENTS table.
+
+
+6.Write a query to completely delete the STUDENTS table along with its structure.
+
+
+7.Write a query to restore the STUDENTS table.
+
+
+8.Write a query to rename the table STUDENTS to STUDENSTDATA.
+
+
+9.Write a query to remove all rows from the A1 table but keep its
+   structure for future use.
+ 
+    create table a1
+    (
+    sno number(10),
+    sname varchar2(10)
+    );
+ 
+insert into a1 values(1,'surya');
+insert into a1 values(2,'anushka');
+commit;
+
+
+------------------------------------------------------------------------------------------------------
+                                                DML TASK
+                                              ===========
+
+2) Update: It is used to change data within a table.
+==========
+
+syntax:-
+=======
+ update tablename set columnname=newvalue 
+ where columnname=oldvalue; 
+
+
+3) Delete:- It is used to delete rows from a table. 
+==========       
+
+syntax:-
+=========
+Delete from tablename;
+
+Delete from tablename where condition;
+ 
+---->First command is to delete all rows
+
+----->Second command is to delete particular rows. 
+
+------------------------------------------------------------------------------------------------------
+
+CREATE TABLE EMP6 (
+    EMPNO NUMBER(4),
+    ENAME VARCHAR2(10),
+    SAL NUMBER(10),
+    JOB VARCHAR2(10),
+    DEPARTMENT VARCHAR2(10)
+);
+
+INSERT INTO EMP6 VALUES (101, 'KIRAN', 6000, 'CLERK', 'RESEARCH');
+INSERT INTO EMP6 VALUES (102, 'GOWTHAM', 10000, 'TEAM LEAD', 'IT');
+INSERT INTO EMP6 VALUES (103, 'SATYA', 7000, 'CLERK', 'RESEARCH');
+INSERT INTO EMP6 VALUES (104, 'KAVYA', 8000, 'ACCOUNTANT', 'FINANCE');
+INSERT INTO EMP6 VALUES (105, 'PREETI', 12000, 'SALESMAN', 'SALES');
+INSERT INTO EMP6 VALUES (106, 'SURYA', 20000, 'MANAGER', 'IT');
+INSERT INTO EMP6 VALUES (107, 'ANUSHKA', 15000, 'DEVELOPER', 'IT');
+INSERT INTO EMP6 VALUES (108, 'NITISH', 12000, 'SALESMAN', 'SALES');
+
+commit;
+
+
+
+SQL>SELECT * FROM EMP6;
+
+EMPNO    ENAME       SAL      JOB         DEPARTMENT
+-----  ---------   ------   ---------   -------------
+101      KIRAN      6000     CLERK        RESEARCH
+102     GOWTHAM     10000    TEAM LEAD      IT  
+103      SATYA      5000     CLERK        RESEARCH  
+104      KAVYA      8000     ACCOUNTANT   FINANCE 
+105     PREETI      12000    SALESMAN     SALES
+106      SURYA      20000    MANAGER        IT        
+107     ANUSHKA     15000    DEVELOPER      IT 
+108     NITISH      12000    SALESMAN     SALES       
+
+
+
+
+1.Set salary as 7000 to an employee whose employee no is 103 from emp6 table
+
+
+
+2.Update the job to MANAGER and increase the salary by 3000 rupees for the employee whose employee       name starts with A and ends with A from emp6 table.
+
+
+
+3.Increase the salary of all employees in the IT department by 2000 in the emp6 table.
+
+
+
+4.increase 1000 salary to all employees in emp6 table
+
+
+
+5.Set the salary to 8500 for employees whose name is KAVYA in the emp6 table.
+
+
+
+6.Increase the salary of all employees whose job is salesman by 20% in the emp6 table.
+
+
+
+7.increase salary by 10% only for employees whose salary is less than 10000.
+
+
+
+8.Add an ADDRESS COLUMN TO THE EMP6 TABLE ?
+
+
+
+
+Note:- In all relational databases by using update command we can also insert data
+=====  into perticular cell(existing row).
+
+
+9.Set the address to HYD for the employee whose name is KIRAN in the emp6 table.
+
+
+
+10.Set the address to GUNTUR for all employees in the IT department in the emp6 table.
+
+
+
+11.Delete the employee record whose name is PREETHI from the emp6 table.
+
+
+
+12.Delete all employee records from the emp6 table where the salary is
+   less than 9000.
+
+
+
+13.delete all the records from emp6 table ?
+
+
+
+14.What is command to get it back the data after deleting ?
+                      (or)
+   How can we restore the data after performing the delete command? 
+
+
+
+ *
+***What are differences b/w delete and truncate?(V.V.I.M.P)
+ *
+NOTE:-2 and 3 point is very important.
+
+======================================================================================
+               TRUNCATE           |               DELETE
+======================================================================================
+1.it is a DDL command.            |1.it is a DML command.
+                                  |
+2.structure remains same          |2.structure remains same
+  data deleted permanently.       |  data is deleted temporally
+                                  |  and storing in a buffer.
+                                  |
+2.it cannot be rollback.          |3.it can be rollback.        
+                                  |
+3.it is an auto commit command    |3.it is not auto commit command.
+                                  |
+4.Where clause cannot be used     |4.Where clause can be used here.
+  here.                           |
+                                  |
+5.We can delete all the records   |5.Using it we can delete single or
+  only.we can not delete single   |  specific group of records or all 
+  or specific group of records.   |  records.
+                                  |
+6.it is faster.                   |6.it is slower.
+                                  |
+7.Deletes data block by block.    | 7.Deletes data row by row.
+                                  |
+                                  |
+===============================*********===========================================
+
+
+
+
+
+                     
